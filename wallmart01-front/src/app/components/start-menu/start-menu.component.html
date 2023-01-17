@@ -1,21 +1,65 @@
 <p class="topside py-1">Servicio al cliente de lider:
     Whatsapp: <a  href="#">+56957211492</a> | Horario: de lunes a viernes de 8:00 a 22:00 y sábado, domingo y festivos de 9:00 a 22:00
 </p>
-<nav class="navbar navbar-expand navbar-light menu_bg_standard_color">
-    <div class="nav navbar-nav nav-fill">
+<nav class="navbar menu_bg_standard_color nav-fill">
         <a class="nav-item nav-link active pe-4" href="#"> <img src="https://www.lider.cl/images/logo.svg" style="width: 100%;" width="32" height="32"/></a>
-        <a class="nav-item nav-link categories py-2 px-3" href="./inicio">
-            <img src="assets/img/category.png" />
+        <a class="nav-item nav-link categories text-center px-3" href="./inicio">
+            <img src="assets/img/category.png" width="32" height="32"/>
             Categorias
         </a>
         <a class=" nav-item form py-1 px-3">
-            <input type="text" class="form-control form-input rounded-pill" placeholder="Que estás buscando?">
+            <input type="text" class="form-control form-input rounded-pill" style="width: 750px;" placeholder="Que estás buscando?">
         </a>
-        <a class="nav-item"></a>
-    </div>
+        <a class="nav-item nav-link categories py-2 px-3"  href="./inicio">
+            <img src="assets/img/cart.png" width="32" height="32"/>
+            <label class="rounded-circle" class="cart-count">0</label>
+        </a>
+        <a class="px-2"></a>
+        <a class="nav-item nav-link rounded supermarket text-center px-3 py-2" href="./inicio">
+            <img src="assets/img/supermarket.png" width="32" height="32"/>
+            Supermercado
+        </a>
 </nav>
-<div class="row">
-    <div class="col">
-        <p>resultados para:</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 ">
+            <p>resultados para: </p>
+        </div>
+
+        <div class="offset-md-8 col-md-2">
+            <p>resultados para:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                <div class="card-body">
+                    <div class="row mb-3">
+                      <h5 class="card-title"><strong>SuperMarca</strong> Televisión 8k </h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-auto">
+                          <p class="card-text"><strong>$270.000</strong> </p>
+                        </div>
+                        <div class="col-md-auto">
+                            <p class="discount-red">50%</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="card-text original-price ">$270.000</p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                          <a href="#" class="card-text btn btn-add border">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
