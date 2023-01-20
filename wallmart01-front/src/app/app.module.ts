@@ -9,6 +9,9 @@ import { SaleDetailComponent } from './components/sale-detail/sale-detail.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ImgUrlPipe } from './pipes/img-url.pipe';
 import { FormsModule } from '@angular/forms';
+import { ProductDepthDetailComponent } from './components/product-depth-detail/product-depth-detail.component';
+import { DiscountPercentajePipe } from './pipes/discount-percentaje.pipe';
+import { PriceFormatPipe } from './pipes/price-format.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FormsModule } from '@angular/forms';
     StartMenuComponent,
     SalesComponent,
     SaleDetailComponent,
-    ImgUrlPipe
+    ImgUrlPipe,
+    ProductDepthDetailComponent,
+    DiscountPercentajePipe,
+    PriceFormatPipe
   ],
   imports: [
     BrowserModule,

@@ -3,32 +3,7 @@
     <div class="col-md-10" >
         <div class="row">
             <div class="col-md-4 mb-2" *ngFor="let item of ProductData">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{item.image | imgUrl}}" alt="Card image cap">
-                    <div class="card-body">
-                        <div class="row mb-3">
-                          <h5 class="card-title"><strong>{{item.brand}}</strong> {{item.description}} </h5>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-auto">
-                              <p class="card-text"><strong>{{item.price}}</strong> </p>
-                            </div>
-                            <div class="col-md-auto">
-                                <p class="discount-red">{{item.discount_percentaje}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="card-text original-price ">{{item.original_price}}</p>
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col">
-                              <a href="#" class="card-text btn btn-add border">Agregar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <app-product-depth-detail [item]="item"></app-product-depth-detail>
             </div>
         </div>
     </div>
