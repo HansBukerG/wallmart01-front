@@ -7,13 +7,15 @@ import { StartMenuComponent } from './components/start-menu/start-menu.component
 import { SalesComponent } from './pages/sales/sales.component';
 import { SaleDetailComponent } from './components/sale-detail/sale-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ImgUrlPipe } from './pipes/img-url.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartMenuComponent,
     SalesComponent,
-    SaleDetailComponent
+    SaleDetailComponent,
+    ImgUrlPipe
   ],
   imports: [
     BrowserModule,

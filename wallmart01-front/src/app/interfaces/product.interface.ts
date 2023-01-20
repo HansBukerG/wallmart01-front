@@ -1,9 +1,9 @@
 export interface Product {
-    Id_object:string,
-    id:string,
-    brand:string,
-    description:string,
-    image:string,
-    price:string,
-    discount_price:string,
+    Id_object:      string;
+    id:             number;
+    brand:          string;
+    description:    string;
+    image:          string;
+    price:          number;
+    discount_price: number;
 }

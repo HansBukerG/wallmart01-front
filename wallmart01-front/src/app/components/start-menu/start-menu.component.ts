@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product.interface';
-import { ProductService } from 'src/app/services/product.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-start-menu',
@@ -8,24 +8,21 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./start-menu.component.scss']
 })
 export class StartMenuComponent implements OnInit{
-  public ProductData: Product[] = []
-
-  constructor(private productService:ProductService){
+  public ProductData:Product[] = []
+  filterValue:string;
+  constructor(private dataService:DataService){
 
   }
   ngOnInit(): void {
-    this.searchValues("asdf")
   }
 
-  searchValues = (search:string) => {
-    console.log("me estoy llamando");
+  searchValues = () => {
+      this.dataService.get(this.filterValue).subscribe(
+        resp => {
+          console.log(resp);
+          this.ProductData = resp
+        }
+      )
 
-    this.ProductData = this.productService.getProduct(search)
-    console.log("array content:");
-    this.ProductData.forEach(element => {
-
-      console.log(element);
-    })
-    console.log(this.ProductData)
   }
 }
