@@ -8,7 +8,7 @@
             Categorias
         </a>
         <a class=" nav-item form py-1 px-3">
-            <input type="text" class="form-control form-input rounded-pill" style="width: 750px;" (ngModelChange)="searchValues()" [(ngModel)]="filterValue" placeholder="Que estás buscando?">
+            <input type="text" class="form-control form-input rounded-pill" style="width: 750px;" (change)="searchValues()" [(ngModel)]="filterValue" placeholder="Que estás buscando?">
         </a>
         <a class="nav-item nav-link categories py-2 px-3"  href="./inicio">
             <img src="assets/img/cart.png" width="32" height="32"/>
@@ -22,11 +22,11 @@
 </nav>
 <div class="container">
   <div class="row">
-      <div class="col-md-2 ">
-          <p>resultados para: </p>
+      <div class="col-md-4 ">
+          <p>resultados para <strong>{{filterValue}}</strong>: </p>
       </div>
 
-      <div class="offset-md-8 col-md-2">
+      <div class="offset-md-4 col-md-2">
           <p>resultados para:</p>
       </div>
   </div>

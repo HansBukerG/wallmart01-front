@@ -8,6 +8,7 @@ import { SalesComponent } from './pages/sales/sales.component';
 import { SaleDetailComponent } from './components/sale-detail/sale-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ImgUrlPipe } from './pipes/img-url.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ImgUrlPipe } from './pipes/img-url.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
