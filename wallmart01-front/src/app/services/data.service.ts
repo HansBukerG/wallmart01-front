@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Product } from '../interfaces/product.interface';
+import { Observable } from 'rxjs';
 
 
 
@@ -23,7 +24,7 @@ export class DataService {
     return option;
   }
 
-  public get(search:string){
+  get = (search:string): Observable<Product[]> => {
     return this.http.get<Product[]>(url+search);
   }
 

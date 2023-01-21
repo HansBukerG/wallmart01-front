@@ -20,7 +20,6 @@ export class StartMenuComponent implements OnInit{
     this.ProductData = []
     this.dataService.get(this.filterValue).subscribe(
       resp => {
-        console.log(resp);
         this.ProductData = resp
       }
       ,

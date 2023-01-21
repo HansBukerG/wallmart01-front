@@ -1,4 +1,6 @@
+import {HttpClientTestingModule,HttpTestingController } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SaleDetailComponent } from '../sale-detail/sale-detail.component';
 
 import { StartMenuComponent } from './start-menu.component';
 
@@ -8,7 +10,8 @@ describe('StartMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StartMenuComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ StartMenuComponent,SaleDetailComponent ]
     })
     .compileComponents();
 

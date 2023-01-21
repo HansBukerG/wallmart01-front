@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StartMenuComponent } from 'src/app/components/start-menu/start-menu.component';
 
 import { SalesComponent } from './sales.component';
 
@@ -8,7 +9,7 @@ describe('SalesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SalesComponent ]
+      declarations: [ SalesComponent, StartMenuComponent ]
     })
     .compileComponents();
 

@@ -1,16 +1,26 @@
+import {HttpClientTestingModule,HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { Observable } from 'rxjs/internal/Observable';
+import { Product } from '../interfaces/product.interface';
 
 import { DataService } from './data.service';
 
-describe('DataServiceService', () => {
+const test_url = "http://localhost:8000/search/"
+
+describe('DataService', () => {
   let service: DataService;
+  let testProducts: Observable<Product[]>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    });
     service = TestBed.inject(DataService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('Should return a list of products', () => {
+    testProducts = service.get(test_url);
+
+    expect(testProducts).toBeDefined();
   });
 });
