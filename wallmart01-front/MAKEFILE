@@ -1,0 +1,5 @@
+image build:
+    docker build --tag wm-front-end .
+
+image-run:
+    docker run --rm -it -d -p 8080:8080 --name wm-front-end wm-front-end
