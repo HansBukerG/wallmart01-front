@@ -2,20 +2,20 @@
     Whatsapp: <a  href="#">+56957211492</a> | Horario: de lunes a viernes de 8:00 a 22:00 y sábado, domingo y festivos de 9:00 a 22:00
 </p>
 <nav class="navbar menu_bg_standard_color nav-fill">
-        <a class="nav-item nav-link active pe-4" href="#"> <img src="https://www.lider.cl/images/logo.svg" style="width: 100%;" width="32" height="32"/></a>
-        <a class="nav-item nav-link categories text-center px-3" href="./inicio">
+        <a class="nav-item nav-link active pe-4" style="width: 100px;margin-left: 10px;" href="#"> <img src="https://www.lider.cl/images/logo.svg" style="width: 100%;" width="32" height="32"/></a>
+        <a class="nav-item nav-link categories text-center px-3" style="width: 150px;" href="./inicio">
             <img src="assets/img/category.png" width="32" height="32"/>
             Categorias
         </a>
         <a class=" nav-item form py-1 px-3">
             <input type="text" class="form-control form-input rounded-pill" style="width: 750px;" (change)="searchValues()" [(ngModel)]="filterValue" placeholder="Que estás buscando?">
         </a>
-        <a class="nav-item nav-link categories py-2 px-3"  href="./inicio">
+        <a class="nav-item nav-link categories py-2 px-3" style="width: 100px;" href="./inicio">
             <img src="assets/img/cart.png" width="32" height="32"/>
             <label class="rounded-circle" class="cart-count">0</label>
         </a>
         <a class="px-2"></a>
-        <a class="nav-item nav-link rounded supermarket text-center px-3 py-2" href="./inicio">
+        <a class="nav-item nav-link rounded supermarket text-center px-3 py-2" style="width: 200px;" href="./inicio">
             <img src="assets/img/supermarket.png" width="32" height="32"/>
             Supermercado
         </a>
@@ -24,10 +24,6 @@
   <div class="row">
       <div class="col-md-4 ">
           <p>resultados para <strong>{{filterValue}}</strong>: </p>
-      </div>
-
-      <div class="offset-md-4 col-md-2">
-          <p>resultados para:</p>
       </div>
   </div>
   <app-sale-detail [ProductData] = "ProductData"></app-sale-detail>

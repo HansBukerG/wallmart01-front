@@ -1,5 +1,5 @@
-<div class="card" style="width: 18rem;" *ngIf="valid_item">
-    <img class="card-img-top" src="{{item.image | imgUrl}}" alt="Card image cap">
+<div class="card" *ngIf="valid_item">
+    <img class="card-img-top" src="{{item.image | imgUrl}}" alt="Card image cap" style="background-image: linear-gradient(#ffffff, rgb(230, 228, 228));">
     <div class="card-body">
         <div class="row mb-3">
           <h5 class="card-title"><strong>{{item.brand}}</strong> {{item.description}} </h5>
@@ -12,7 +12,7 @@
                 <p class="discount-red">{{item.discount_percentaje | discountPercentaje}}</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-2">
             <div class="col" *ngIf="discount_check">
                 <p class="card-text original-price ">{{item.original_price | priceFormat}}</p>
             </div>
