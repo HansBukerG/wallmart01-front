@@ -5,7 +5,7 @@
     padding-bottom: 2px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 25%;
+    border-radius: 23px;
     font-weight: bold;
 }
 
@@ -16,11 +16,27 @@
 }
 
 .btn-add{
+    width: 145px;
+    // height: 32px;
+    border-radius: 23px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.25);
     padding-left: 35px;
     padding-right: 35px;
     color:#0171ce;
     font-weight: bold;
     border-style: outset;
     justify-content: center;
-    border-radius: 15px;
+    font-size: 16px;
+    line-height: 1.4;
+
+}
+
+.card-box{
+    box-shadow: 0 0 12px 0 #e6e5e5;
+    border-radius: 16px;
+}
+
+.card-img{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
