@@ -28,6 +28,7 @@ export class StartMenuComponent implements OnInit{
   searchValues = () => {
     this.ProductData = []
     if (this.formSearch.valid) {
+      this.filterValue = this.formSearch.value.search
       this.dataService.get(this.formSearch.value).subscribe(
         resp => {
           if (resp != null ){
