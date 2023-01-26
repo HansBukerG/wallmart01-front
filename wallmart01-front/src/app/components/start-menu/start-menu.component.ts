@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/interfaces/product.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,25 +12,45 @@ export class StartMenuComponent implements OnInit{
   public ProductData:Product[] = []
   public filterValue:string;
   public CheckData:Boolean = true;
+  public formSearch!:FormGroup
 
-  constructor(private dataService:DataService){
+  constructor(
+    private dataService:DataService,
+    private readonly formBuilder:FormBuilder
+    ){
     this.filterValue = "";
   }
   ngOnInit(): void {
+    this.formSearch = this.FormInit();
     this.pageInit();
   }
 
   searchValues = () => {
     this.ProductData = []
-    this.dataService.get(this.filterValue).subscribe(
-      resp => {
-        if (resp.length != 0 ){
-          this.ProductData = resp
-          this.CheckDataF()
-        }else{
+    if (this.formSearch.valid) {
+      this.dataService.get(this.formSearch.value).subscribe(
+        resp => {
+          if (resp != null ){
+            this.ProductData = resp
+            this.CheckDataF()
+          }else{
+            this.CheckDataF()
+          }
+        }
+        ,
+        error =>{
           this.CheckDataF()
         }
+      )
+    }
+  }
 
+  pageInit = () => {
+    this.ProductData = []
+    this.dataService.getAll().subscribe(
+      resp => {
+        this.ProductData = resp
+        this.CheckDataF()
       }
       ,
       error =>{
@@ -38,17 +59,10 @@ export class StartMenuComponent implements OnInit{
     )
   }
 
-  pageInit = () => {
-    this.ProductData = []
-    this.dataService.getAll().subscribe(
-      resp => {
-
-        this.ProductData = resp
-        this.CheckDataF()
-      }
-      ,
-      error =>{
-        this.CheckDataF()
+  FormInit = () => {
+    return this.formBuilder.group(
+      {
+        search: new FormControl('',Validators.required),
       }
     )
   }
