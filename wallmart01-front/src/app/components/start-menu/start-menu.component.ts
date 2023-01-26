@@ -10,22 +10,54 @@ import { DataService } from 'src/app/services/data.service';
 export class StartMenuComponent implements OnInit{
   public ProductData:Product[] = []
   public filterValue:string;
+  public CheckData:Boolean = true;
+
   constructor(private dataService:DataService){
     this.filterValue = "";
   }
   ngOnInit(): void {
+    this.pageInit();
   }
 
   searchValues = () => {
     this.ProductData = []
     this.dataService.get(this.filterValue).subscribe(
       resp => {
-        this.ProductData = resp
+        if (resp.length != 0 ){
+          this.ProductData = resp
+          this.CheckDataF()
+        }else{
+          this.CheckDataF()
+        }
+
       }
       ,
       error =>{
-        console.log("data not found");
+        this.CheckDataF()
       }
     )
+  }
+
+  pageInit = () => {
+    this.ProductData = []
+    this.dataService.getAll().subscribe(
+      resp => {
+
+        this.ProductData = resp
+        this.CheckDataF()
+      }
+      ,
+      error =>{
+        this.CheckDataF()
+      }
+    )
+  }
+
+  CheckDataF = () => {
+    if (this.ProductData.length == 0){
+      this.CheckData = false
+    }else{
+      this.CheckData = true
+    }
   }
 }

@@ -7,10 +7,10 @@
         <div class="row">
             <p class="card-text">
                 <strong>{{item.price | priceFormat}}</strong>
-                <label class="discount-red">
+                <label class="discount-red" *ngIf="discount_check">
                     {{item.discount_percentaje | discountPercentaje}}
                 </label>
-                </p>
+            </p>
         </div>
         <div class="row mb-2">
             <div class="col" *ngIf="discount_check">

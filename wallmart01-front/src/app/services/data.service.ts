@@ -6,7 +6,7 @@ import { environment } from '../environments/environment';
 
 
 
-// const url = "http://localhost:8000/search/"
+
 const url = "https://back-data01.fly.dev/search/"
 @Injectable({
   providedIn: 'root'
@@ -28,8 +28,10 @@ export class DataService {
     return option;
   }
 
-  get = (search:string): Observable<Product[]> => {
-    return this.http.get<Product[]>(this.domain+search);
+  get = (id:string): Observable<Product[]> => {
+    return this.http.get<Product[]>(`${this.domain}/search/${id}`);
   }
-
+  getAll = (): Observable<Product[]> => {
+    return this.http.get<Product[]>(`${this.domain}/search/`);
+  }
 }
