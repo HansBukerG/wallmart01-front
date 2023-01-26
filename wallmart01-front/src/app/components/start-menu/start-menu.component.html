@@ -80,6 +80,11 @@
     <div *ngIf="CheckData; else notFound">
       <app-sale-detail [ProductData] = "ProductData"></app-sale-detail>
     </div>
-    <ng-template #notFound>No se han encontrado productos.</ng-template>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col">
+          <ng-template #notFound>No se han encontrado productos.</ng-template>
+        </div>
+    </div>
   </div>
 </div>
