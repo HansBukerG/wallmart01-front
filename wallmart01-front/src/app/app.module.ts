@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDepthDetailComponent } from './components/product-depth-detail/product-depth-detail.component';
 import { DiscountPercentajePipe } from './pipes/discount-percentaje.pipe';
 import { PriceFormatPipe } from './pipes/price-format.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PriceFormatPipe } from './pipes/price-format.pipe';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

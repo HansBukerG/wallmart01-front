@@ -8,6 +8,8 @@ import { Product } from 'src/app/interfaces/product.interface';
 })
 export class SaleDetailComponent implements OnInit {
   @Input() public ProductData:Product[] = []
+  p: number = 1;
+  directionLinks:Boolean = true
 
   constructor(){}
 
