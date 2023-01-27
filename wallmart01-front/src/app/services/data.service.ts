@@ -28,7 +28,7 @@ export class DataService {
     return option;
   }
 
-  get = ({search}:string): Observable<Product[]> => {
+  get = (search:string): Observable<Product[]> => {
     return this.http.get<Product[]>(`${this.domain}/search/${search}`);
   }
   getAll = (): Observable<Product[]> => {
