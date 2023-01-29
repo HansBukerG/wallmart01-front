@@ -1,27 +1,74 @@
+
 # Wallmart01Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+This project is the front-end part coded in Angular.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Links for the project
+ Live url:
 
-## Code scaffolding
+  - [https://hansbukerg-front-app.fly.dev/](https://hansbukerg-front-app.fly.dev/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Github Project:
+ - [https://github.com/HansBukerG/wallmart01-front](https://github.com/HansBukerG/wallmart01-front)
+ Docker Project:
 
-## Build
+ - [https://hub.docker.com/repository/docker/hansbukerg/wm-front-end/general](https://hub.docker.com/repository/docker/hansbukerg/wm-front-end/general)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+ 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Deployment
 
-## Further help
+To deploy this project run
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+  docker build --tag wm-front-end .
+```
+
+To run this project:
+
+```bash
+  docker run --rm -it -d -p 8080:8080 --name wm-front-end wm-front-end
+```
+
+## Environment Variables
+
+It needs to set properly the output port of the back-end project to stablish a correct connectiuon with the front-end part.
+
+In default, the app looks for the URL:
+
+http://localhost:8080
+
+
+## API Reference
+
+#### Get Products
+
+```http
+  GET /search/searchString
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `searchString` | `string` | returns a list of products in base of parameter |
+
+#### Get all products
+
+```http
+  GET /search/
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `none`      | `string` | Returns the first 10 items from the database |
+
+
+
+
+## Authors
+
+- [@HansBukerG](https://www.github.com/HansBukerG)
+
