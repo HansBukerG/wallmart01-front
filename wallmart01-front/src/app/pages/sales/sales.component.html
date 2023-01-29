@@ -1,0 +1,19 @@
+<app-start-menu  (SendData)="ReceiveData($event)"></app-start-menu>
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-4 ">
+          <p style="font-size: 18px;">resultados para <strong>{{filterValue}}</strong>: </p>
+      </div>
+  </div>
+  <div class="row">
+    <div *ngIf="CheckData; else notFound">
+      <app-sale-list [ProductData] = "ProductData"></app-sale-list>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <ng-template #notFound>No se han encontrado productos.</ng-template>
+        </div>
+    </div>
+  </div>
+</div>

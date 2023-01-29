@@ -1,0 +1,27 @@
+<div class="card card-box" *ngIf="valid_item">
+    <img class="card-img-top card-img" src="{{item.image | imgUrl}}" alt="Card image cap" style="background-image: linear-gradient(#ffffff, rgb(230, 228, 228));">
+    <div class="card-body">
+        <div class="row mb-3" style="height: 50px;">
+          <h5 class="card-text"><strong>{{item.brand}}</strong> {{item.description}} </h5>
+        </div>
+        <div class="row mb-3" style="height: 25px;">
+            <p class="card-text">
+                <strong>{{item.price | priceFormat}}   </strong>
+                <label class="discount-red" *ngIf="discount_check">
+                    {{item.discount_percentaje | discountPercentaje}}
+                </label>
+            </p>
+        </div>
+        <div class="row mb-3" style="height: 25px;">
+            <div class="col" *ngIf="discount_check" style="font-size: 13px;">
+                <p class="card-text original-price ">{{item.original_price | priceFormat}}</p>
+            </div>
+        </div>
+        <div class="row mb-1 text-center" >
+            <div class="col">
+              <a href="#" class="card-text btn btn-add border">Agregar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
