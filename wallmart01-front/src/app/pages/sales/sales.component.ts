@@ -11,6 +11,7 @@ export class SalesComponent implements OnInit {
   public ProductData:Product[] = []
   public CheckData:Boolean = true;
   public filterValue:string = "";
+  public pageNumber!:number;
   constructor(
     private dataService:DataService,
     ){}
@@ -44,14 +45,6 @@ export class SalesComponent implements OnInit {
     )
   }
 
-  CheckDataF = () => {
-    if (this.ProductData.length == 0){
-      this.CheckData = false
-    }else{
-      this.CheckData = true
-    }
-  }
-
   PageInit = () => {
     this.ProductData = []
     this.dataService.getAll().subscribe(
@@ -64,5 +57,14 @@ export class SalesComponent implements OnInit {
         this.CheckDataF()
       }
     )
+  }
+
+  CheckDataF = () => {
+    if (this.ProductData.length == 0){
+      this.CheckData = false
+    }else{
+      this.pageNumber = 1
+      this.CheckData = true
+    }
   }
 }
