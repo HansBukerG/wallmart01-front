@@ -10,7 +10,10 @@
             ></pagination-controls>
         </div>
         <div class="row">
-            <div class="col-md-4 mb-2" *ngFor="let item of ProductData | paginate: { itemsPerPage: 3, currentPage: p }">
+            <div class="col-md-4 mb-2" *ngFor="let item of ProductData | paginate: {
+                itemsPerPage: 3
+                , currentPage: p
+             }">
                 <app-product-depth-detail [item]="item"></app-product-depth-detail>
             </div>
         </div>
